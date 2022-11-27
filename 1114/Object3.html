@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function Acuont(owner, code, balance){
+            this.owner = owner;
+            this.code = code;
+            this.balance = balance;
+        this.inquiry = function(){
+            return this.balance;
+        };
+        this.deposit = function(money){
+             this.balance += money;
+        };
+        this.withdraw = function(money){
+            this.balance -= money;
+            return money;
+        };
+    };
+    </script>
+</head>
+<body>
+    <h3>Account prototype 만들기</h3>
+    <hr>
+    <script>
+        var account = new Account("홍길동", "1111-11", 999999999);
+        var account2 = new Account("이순신", "2222-11", 999999999);//새로 만들 수 있음
+
+        document.write('Account : ' + account.owner + ',' + account.code + ',' + account.balance + '<br><br>');
+        account.deposit(1000000);
+        document.write('잔액 : ' + account.inquiry() + '<br>');
+        account.withdraw(500000);
+        document.write('잔액 : ' + account.inquiry());
+    </script>
+</body>
+</html>

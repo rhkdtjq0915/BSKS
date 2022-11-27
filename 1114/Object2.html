@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var account = {
+
+        owner : "홍길동",//객체 속성들
+        code : "1111-11",
+        balance : 67000000,
+
+        inquiry : function(){
+            return this.balance;
+        },
+        deposit : function(money){
+             this.balance += money;
+        },
+        withdraw : function(money){
+            this.balance -= money;
+            return money;
+        }
+    }
+    </script>
+</head>
+<body>
+    <h3>리터럴 표기법으로 사용자 객체 만들기</h3>
+    <hr>
+    <script>
+        document.write('Account : ' + account.owner + ',' + account.code + ',' + account.balance + '<br><br>');
+        account.deposit(1000000);
+        document.write('잔액 : ' + account.inquiry() + '<br>');
+        account.withdraw(500000);
+        document.write('잔액 : ' + account.inquiry());
+
+        document.write('Account : ' + account2.owner + ',' + account2.code + ',' + account2.balance + '<br><br>');
+        account2.deposit(1000000);
+        document.write('잔액 : ' + account2.inquiry() + '<br>');
+        account2.withdraw(500000);
+        document.write('잔액 : ' + account2.inquiry());
+    </script>
+</body>
+</html>

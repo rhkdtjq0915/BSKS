@@ -1,0 +1,144 @@
+>mkdir ch02-1
+>cd ch02-1
+
+#package.json 파일 생성 <- Nodejs 프로젝트
+>npm init --y
+
+#컴파일러와 ts-node 설치하기
+>npm i -D typescript ts-node
+
+#타입라이브러리 설치하기
+>npm i -D @types/node
+
+#타입스크립트 컴파일러 tsc의 설정 파일 만들기
+>tsc --init
+
+>mkdir -p src/utils
+>touch src/index.ts src/utils/makePerson.ts
+
+#--src/index.ts--
+import { testMakePerson } from './utils/makePerson'
+testMakePerson()
+
+#--src/utils/makePerson.ts
+export function makePerson(name: string, age: number) {
+  return { name: name, age: age }
+}
+export function testMakePerson() {
+  console.log(makePerson('Jane', 22), makePerson('Jack', 33))
+}
+
+#개발모드
+# package.json
+# 5번 라인 "main":"src/index.js"
+# 6번 라인 "scripts": {
+#	"dev": "ts-node src",
+#	"build": "tsc && node dist"
+# }
+>npm run dev
+
+#배포모드
+# tsconfig.json
+# 52번 라인 "outDir" : "./dist"
+>npm run build
+
+
+============================================================
+>cd ..
+>mkdir ch02-02
+>cd ch02-02
+>npm init --y
+>npm i -D typescript ts-node
+>npm i -D @types/node
+>tsc --init
+>mkdir -p src/utils
+>mkdir src/person
+>touch src/index.ts src/person/IPerson.ts src/person/Person.ts src/utils/makeRandomNumber.ts
+
+=============================================================
+let MAX_AGE = 100
+
+interface IPerson {
+    name: string
+    age: number
+}
+
+class Person implements IPerson{
+    constructor(public name:string, public age:number){}
+}
+function makeRandomNumber(max: number = MAX_AGE):number {
+    return Math.ceil(Math.random() * max)
+}
+const makePerson = (name: string, 
+    age:number = makeRandomNumber()) =>({name, age})
+
+const testMakePerson = ():void => {
+    let jane: IPerson = makePerson('Jane',50)
+    let jack: IPerson = makePerson('Jack')
+    console.log(jane, jack)
+}
+
+testMakePerson()
+
+========================================================
+
+#개발모드
+# package.json
+# 5번 라인 "main":"src/index.js"
+# 6번 라인 "scripts": {
+#	"dev": "ts-node src",
+#	"build": "tsc && node dist"
+# }
+>npm run dev
+>npm run dev
+
+#배포모드
+# tsconfig.json
+# 52번 라인 "outDir" : "./dist"
+>npm run build
+>npm run build
+========================================================
+
+#src/index.ts
+import IPerson from './person/IPerson'
+import Person from './person/Person'
+import Chance from 'chance'
+import * as R from 'ramda'
+
+const chance = new Chance()
+let persons: IPerson[] = R.range(0, 2).map(
+  (n: number) => new Person(chance.name(), chance.age())
+)
+console.log(persons)
+
+#src/person/IPerson.ts
+export default interface IPerson {
+  name: string,
+  age: number
+}
+
+#src/person/Person.ts
+import {makeRandomNumber} from '../utils/makeRandomNumber'
+import IPerson from './IPerson'
+
+export default class Person implements IPerson {
+  constructor(public name: string, public age: number = makeRandomNumber()) {}
+}
+
+export const makePerson = (name: string, 
+                          age:number = makeRandomNumber()): IPerson => ({name, age});
+
+#src/utils/makeRandomNumber.ts
+let MAX_AGE = 100;
+
+export function makeRandomNumber(max: number = MAX_AGE): number {
+  return Math.ceil((Math.random() * max))
+}
+
+
+>npm i -S chance ramda
+>npm i -D @types/chance @types/ramda
+
+
+
+
