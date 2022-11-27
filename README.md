@@ -7,12 +7,12 @@ dothome.co.kr
 그것을 연결해주는 인터넷
 
 # 10/24
-https://developer.mozilla.org/ko/docs/Web/HTML 자습서
-https://moondol-ai.tistory.com/184 여기서도 공부해
-깃허브에 학습한 내용을 정리해라
-레벨업이 되면 당신은 어느 레벨이 된다고 등급이 정해질거임
-그걸 깃허브에 올리셈
-1년만 꾸준히 해보셈
+https://developer.mozilla.org/ko/docs/Web/HTML 자습서      
+https://moondol-ai.tistory.com/184 여기서도 공부해      
+깃허브에 학습한 내용을 정리해라      
+레벨업이 되면 당신은 어느 레벨이 된다고 등급이 정해질거임      
+그걸 깃허브에 올리셈      
+1년만 꾸준히 해보셈      
 그리고 현장학습가면 인정 받는다
 
 헤더 바디가 없으면 그냥 바디로 인식
