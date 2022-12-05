@@ -254,3 +254,85 @@ oncontextmenu
 문서의 로딩 완료와 onload
 
 new Image()로 이미지 로딩과 출력
+	
+------------------------------------------------------------------
+# 12/05
+
+10장
+
+통합 개발 환경(Integrated Development Environment, IDE)
+
+랜더링
+HTML을 파싱하여 DOM 트리를 만든다.
+CSS를 파싱하여 CSSOM 트리를 만든다.
+DOM 과 CSSOM 을 결합하여 렌더링 트리를 만든다.
+렌더링 트리에서 각 노드의 크기와 위치를 계산한다.
+개별 노드를 화면에 그린다.
+
+브라우저 관련 객체 개요
+
+window 객체
+
+윈도우 모양과 window 객체의 프로퍼티
+
+윈도우 단축키 https://webdir.tistory.com/370
+
+윈도우 열기
+
+3개의 매개변수를 가진 함수
+
+URI URL URN
+URI는 인터넷의 자원을 식별할 수 있는 문자열
+URI라는 개념은 어떤 형식이 있다기 보다는 특정 자원을 식별하는 문자열을 의미한다. 그래서 URL이 아니고 URN도 아니면 그냥 URI가 되는 것이다.
+URL은 네트워크 상에서 웹 페이지, 이미지, 동영상 등의 파일이 위치한 정보를 나타낸다.
+URN은 URI의 표준 포맷 중 하나로, 이름으로 리소스를 특정하는 URI이다.
+
+윈도우 열기 사례
+
+_blank : 	이름 없는 새 윈도우를 열고, 웹 페이지 로드
+_parent : 	현재 윈도우(혹은 프레임)의 부모 윈도우에 웹 페이지 로드
+_self : 	현재 윈도우에 웹 페이지 로드
+_top : 	브라우저 윈도우에 웹 페이지 로드
+
+윈도우 이름과 윈도우 열기
+
+예제 10-1 window.open()으로 윈도우 열기
+
+window 객체의 타이머 활용
+
+setTimeout()/clearTimeout()
+
+예제 10-3 setTimeout()로 웹 페이지 자동 연결
+
+setInterval()/clearInterval()
+
+예제 10-4 setInterval()로 텍스트 회전
+
+윈도우 위치 및 크기 조절
+
+예제 10-5 윈도우의 위치와 크기 조절
+
+예제 10-6 1초마다 10픽셀씩 자동 스크롤
+
+웹 페이지 프린트 
+
+예제 10-6 1초마다 10픽셀씩 자동 스크롤
+
+예제 10-7 웹 페이지 프린트
+
+onbeforeprint와 onafterprint
+
+예제 10-8 onbeforeprint와 onafterprint 이벤트 활용
+ex)워터마크
+
+location 객체
+
+예제 10-9 location 객체로 웹 사이트 접속 - onchange로 바꿔보기
+
+navigator 객체
+
+screen 객체
+
+history 객체
+
+화면에 현재 부산 날씨를 띄움 오픈api
