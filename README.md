@@ -72,8 +72,6 @@ padding 안쪽 여백
 
 윈도우+. 이모지
 
-###시험에 낼것임 block, inline, inline-block###
-
 display
 position
 z-index
@@ -190,7 +188,7 @@ open() close()
 
 문서의 동적 구성
 
-11/28
+# 11/28
 9장
 
 이벤트
